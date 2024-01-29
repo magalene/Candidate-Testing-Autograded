@@ -18,22 +18,39 @@ let candidateAnswers = [];
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-  
+  candidateName = input.question("What is your name? ");
 }
-candidateName = input.question("What is your name? ");
+
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-}
-for ( let i = 0; i < questions.length; i++){
-  candidateAnswers =[input.question(questions[i])];
+  for ( let i = 0; i < questions.length; i++){ //defining 
+    candidateAnswers.push(input.question(questions[i])); //adding the answers to the array
+ }
+
+  
 }
 
-function gradeQuiz() {
+function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
-
+// look at the example for assingment one
+let  rightAnswers = `1) Who was the first American woman in space? 
+Your Answer: ${candidateAnswers[0]}
+Correct Answer: ${correctAnswers[0]}
+2) True or false: 5000 meters = 5 kilometers.
+Your Answer: ${candidateAnswers[1]}
+Correct Answer: ${candidateAnswers[1]}
+3) (5 + 3)/2 * 10 = ?
+Your Answer: ${candidateAnswers[2]}
+Correct Answer: ${candidateAnswers[2]}
+4) Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2?
+Your Answer: ${candidateAnswers[3]}
+Correct Answer: ${candidateAnswers[3]}
+5) What is the minimum crew size for the ISS?
+Your Answer: ${candidateAnswers[4]}
+Correct Answer: ${candidateAnswers[4]}`;
+console.log(rightAnswers);
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
 
@@ -47,6 +64,7 @@ function runProgram() {
    console.log("Hello,"+ candidateName);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
+  console.log(candidateAnswers)
 }
 
 // ----------- Don't write any code or change any code below this line ---------- //
